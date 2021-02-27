@@ -1,32 +1,33 @@
 <div id="container">
-  <table>
-    <thead>
-      <td></td>
-      <td></td>
-      <th>Product Name</th>
-      <th>Unit Price</th>
-      <th>Qty</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of cartProducts">
-        <td>
-          <button id="delete" class="iconBtn"></button>
-        </td>
-        <td><img src="./assets/images/{{ item.product.image }}" /></td>
-        <td>{{ item.product.name }}</td>
-        <td>${{ item.product.price }}</td>
-        <td>
-          <div class="quantity">
-            <button [disabled]="item.quantity === 1" (click)="decrementQuantity(item)">-</button>
-            <div>{{ item.quantity }}</div>
-            <button (click)="incrementQuantity(item)">+</button>
-            <button id="edit" class="iconBtn"></button>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <button mat-raised-button class="blackBtn">Update Shopping Cart</button>
-      </tr>
-    </tbody>
-  </table>
+  <div id="tableWrapper">
+    <table>
+      <thead>
+        <td></td>
+        <td></td>
+        <th>Product Name</th>
+        <th>Unit Price</th>
+        <th>Qty</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartProducts">
+          <td>
+            <button id="delete" class="iconBtn" (click)="removeFromCart(item)"></button>
+          </td>
+          <td><img src="./assets/images/{{ item.product.image }}" /></td>
+          <td>{{ item.product.name }}</td>
+          <td>{{ item.product.price | currency }}</td>
+          <td>
+            <div class="quantity">
+              <button [disabled]="item.quantity === 1" (click)="decrementQuantity(item)">-</button>
+              <div>{{ item.quantity }}</div>
+              <button (click)="incrementQuantity(item)">+</button>
+              <button id="edit" class="iconBtn" (click)="calculateSubtotal()"></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="update" mat-raised-button class="blackBtn" (click)="calculateSubtotal()">Update Shopping Cart</button>
+  </div>
+  <app-cart-summary [subtotal]="subtotal"></app-cart-summary>
 </div>

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="greyBox">
+    <span>SHIPPING</span><span>{{ shipping | currency }}</span>
+  </div>
+  <div id="totals">
+    <div class="greyBox">CART TOTALS</div>
+    <div>
+      <div>
+        <span>Subtotal</span><span>{{ _subtotal | currency }}</span>
+      </div>
+      <hr />
+      <div>
+        <span>Grand Total</span><span id="grandTotal">{{ _subtotal + shipping | currency }}</span>
+      </div>
+      <button mat-raised-button class="blackBtn">Proceed to checkout</button>
+    </div>
+  </div>
+</div>

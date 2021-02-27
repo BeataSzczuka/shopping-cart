@@ -1,0 +1,42 @@
+@import 'src/variables.scss';
+
+.container > div {
+  border: solid 1px $bordergrey;
+  margin: 1em;
+}
+
+#totals > div {
+  padding: 0.5em 1em;
+  &.greyBox {
+    margin-bottom: 1em;
+  }
+  &:last-child div {
+    display: flex;
+    justify-content: space-between;
+  }
+  span:first-child {
+    color: $greyfont;
+  }
+  span:last-child {
+    font-weight: bold;
+  }
+  button {
+    margin: 1em 0;
+    width: 100%;
+  }
+  hr {
+    border-top: 1px solid $bordergrey;
+  }
+}
+
+#grandTotal {
+  transform: scale(1.2);
+}
+
+.greyBox {
+  background: $bggrey;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}

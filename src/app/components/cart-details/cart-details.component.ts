@@ -12,6 +12,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 })
 export class CartDetailsComponent implements OnInit {
   cartProducts: CartProduct[];
+  subtotal: number = 0;
 
   constructor(private productService: ProductService) {}
 
@@ -24,7 +25,7 @@ export class CartDetailsComponent implements OnInit {
               quantity: item.quantity,
               product: allProducts.find((p) => p.id === item.productId),
             }));
-            console.log(this.cartProducts);
+            this.calculateSubtotal();
           })
         )
       )
@@ -42,5 +43,15 @@ export class CartDetailsComponent implements OnInit {
     this.cartProducts = this.cartProducts.map((cartProduct) =>
       cartProduct.product.id === item.product.id ? { ...cartProduct, quantity: cartProduct.quantity - 1 } : cartProduct
     );
+  }
+
+  calculateSubtotal() {
+    this.subtotal = 0;
+    this.cartProducts.forEach((item) => (this.subtotal += item.quantity * item.product.price));
+  }
+
+  removeFromCart(item) {
+    this.cartProducts = this.cartProducts.filter((val) => val.product.id !== item.product.id);
+    this.calculateSubtotal();
   }
 }

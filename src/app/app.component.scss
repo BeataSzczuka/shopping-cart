@@ -1,4 +1,24 @@
+@import 'src/variables.scss';
+
 h2 {
-  color: gray;
+  color: $greyfont;
   font-weight: 400;
+}
+#cart {
+  padding: 2em 5%;
+  margin: auto;
+
+  #header {
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+h1 {
+  padding: 2em;
+  box-shadow: 1px 1px 4px lightgrey;
+  margin: 3em;
+  color: $greyfont;
 }

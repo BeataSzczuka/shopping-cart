@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shopping-cart';
+  showCart = true;
+
+  proceedToCheckout() {
+    this.showCart = false;
+  }
 }

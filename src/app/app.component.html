@@ -1,7 +1,8 @@
-<div>
-  <div>
+<div *ngIf="showCart" id="cart">
+  <div id="header">
     <h2>Shopping Cart</h2>
-    <button mat-raised-button class="blackBtn">Proceed to checkout</button>
+    <span><button mat-raised-button class="blackBtn" (click)="proceedToCheckout()">Proceed to checkout</button></span>
   </div>
   <app-cart-details></app-cart-details>
 </div>
+<h1 *ngIf="!showCart">Your order has been submitted successfully</h1>

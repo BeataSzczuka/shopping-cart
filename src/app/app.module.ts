@@ -6,9 +6,10 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { AppComponent } from './app.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 
 @NgModule({
-  declarations: [AppComponent, CartDetailsComponent],
+  declarations: [AppComponent, CartDetailsComponent, CartSummaryComponent],
   imports: [BrowserModule, HttpClientModule, CommonModule, MatButtonModule],
   providers: [],
   bootstrap: [AppComponent],
