@@ -1,0 +1,16 @@
+{
+  "cart_products": [
+    {
+      "productId": 1,
+      "quantity": 2
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Headphones",
+      "image": "headphones.png",
+      "price": 11.9
+    }
+  ]
+}
