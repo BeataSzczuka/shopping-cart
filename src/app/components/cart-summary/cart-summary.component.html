@@ -5,14 +5,14 @@
   <div id="totals">
     <div class="greyBox">CART TOTALS</div>
     <div>
-      <div>
-        <span>Subtotal</span><span>{{ _subtotal | currency }}</span>
+      <div id="subtotal">
+        <span>Subtotal</span><span>{{ subtotal | currency }}</span>
       </div>
       <hr />
       <div>
-        <span>Grand Total</span><span id="grandTotal">{{ _subtotal + shipping | currency }}</span>
+        <span>Grand Total</span><span id="grandTotal">{{ subtotal + shipping | currency }}</span>
       </div>
-      <button mat-raised-button class="blackBtn">Proceed to checkout</button>
+      <button mat-raised-button class="blackBtn" (click)="onProceedToCheckout()">Proceed to checkout</button>
     </div>
   </div>
 </div>

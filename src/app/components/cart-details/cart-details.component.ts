@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { pipe } from 'rxjs';
 import { mergeMap, map } from 'rxjs/operators';
 import { CartProduct } from 'src/app/models/cart-product.model';
-import { Product } from 'src/app/models/product.model';
+
 import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
