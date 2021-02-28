@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-The application uses json-server to mock data stored in data.json file. To application you shoul run `json-server --watch data.json` and `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The application uses json-server to mock data stored in data.json file. To start application run `json-server --watch data.json` and in a separate terminal run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Running unit tests
 
